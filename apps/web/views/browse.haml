@@ -1,0 +1,16 @@
+.page-header
+  %h1 Browse Church Calendar
+
+= render :_calselect, locals: {calendars: calendars, cal: cal}
+
+- start_year.upto(end_year) do |year|
+  %p
+    %strong= year
+    - 1.upto(12) do |month|
+      - cls = %w{btn btn-circle}
+      - if year == today.year && month == today.month
+        - cls << 'btn-primary'
+      - else
+        - cls << 'btn-default'
+
+      %a{href: "/browse/#{cal}/#{year}/#{month}", class: cls.join(' ')}= month

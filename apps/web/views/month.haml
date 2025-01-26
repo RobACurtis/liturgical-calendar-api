@@ -1,0 +1,30 @@
+.page-header
+  %h1 Browse Church Calendar
+
+= render :_calselect, locals: {calendars: calendars, cal: cal}
+
+%nav
+  %ul.pagination
+    - if month > 1
+      %li
+        %a{href: "/browse/#{cal}/#{year}/#{month-1}"} &laquo;
+    - 1.upto(12) do |i|
+      %li{class: (month == i ? 'active' : nil)}
+        %a{href: "/browse/#{cal}/#{year}/#{i}"}= i
+    - if month < 12
+      %li
+        %a{href: "/browse/#{cal}/#{year}/#{month+1}"} &raquo;
+
+%h2= "#{year} / #{month}"
+
+%table.table.table-striped
+  - entries.each do |d|
+    %tr{'id' => d.date.day}
+      %td.tar= d.date.day
+      %td= I18n.t "weekday.#{d.weekday}"
+      %td
+        - d.celebrations.each do |c|
+          %div
+            %span{class: "celebration #{c.colour.to_sym}"} &nbsp;
+            - r = c.rank.short_desc
+            = "#{c.title}#{', ' + r if r}"

@@ -1,0 +1,36 @@
+!!!
+
+%html
+  %head
+    %meta{charset: 'utf-8'}
+    %meta{name: 'viewport', content: 'width: device-width, initial-scale: 1'}
+
+    %title Church Calendar API
+
+    / jquery
+    %script{src: 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'}
+
+    / bootstrap
+    %link{rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'}
+    %script{src: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'}
+
+    %link{rel: 'stylesheet', type: 'text/css', href: '/style.css'}
+
+  %body
+    %nav.navbar.navbar-default
+      .container
+        %ul.nav.navbar-nav
+          %li
+            %a{href: '/'} Home
+          %li
+            %a{href: '/browse'} Browse Calendar
+          %li
+            %a{href: '/api-doc'} API Documentation
+          %li
+            %a{href: '/about'} About
+        %ul.nav.navbar-nav.pull-right
+          %li
+            %a{href: 'https://github.com/igneus/church-calendar-api'} Fork me at Github
+
+    .container
+      = yield
