@@ -41,3 +41,8 @@ In order to add a new calendar:
 ## License
 
 GNU/LGPL 3 or later
+
+[calapi]: http://calapi.inadiutorium.cz
+[caro]: http://github.com/igneus/calendarium-romanum
+[caro_data]: https://github.com/igneus/calendarium-romanum/tree/master/data
+[caro_remote]: https://github.com/igneus/calendarium-romanum-remote
