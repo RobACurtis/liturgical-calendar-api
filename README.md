@@ -11,9 +11,6 @@ grape.
 
 Church Calendar API is a more or less RESTful read-only JSON API.
 
-API documentation with URI examples and live links to API endpoints:
-https://calendar-api.graceoftherosary.com/
-
 ## Running locally
 
 1. install dependencies using Bundler
